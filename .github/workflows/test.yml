@@ -1,3 +1,5 @@
+name: 'Test'
+
 permissions:
   actions: read
   contents: write
