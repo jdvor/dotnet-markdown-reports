@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetMarkdownReports.App", "src\DotnetMarkdownReports.App\DotnetMarkdownReports.App.csproj", "{061B4276-AB6F-47E0-A6B7-612B632A252F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_solution", "_solution", "{09A02E46-110B-4493-8F28-2674391FFE0D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Directory.Packages.props = Directory.Packages.props
+		global.json = global.json
+		nuget.config = nuget.config
+		README.md = README.md
+		shared.props = shared.props
+		run.sh = run.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8B9E3463-9CB1-436A-B280-4CFD040F6370}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+		src\BannedSymbols.txt = src\BannedSymbols.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{04DA3338-A86F-4E71-B9DE-71576D5E7280}"
+	ProjectSection(SolutionItems) = preProject
+		test\Directory.Build.props = test\Directory.Build.props
+		test\xunit.runner.json = test\xunit.runner.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetMarkdownReports.Tests", "test\DotnetMarkdownReports.Tests\DotnetMarkdownReports.Tests.csproj", "{4BB417AC-C3D4-43DC-92E9-8627D088DE39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{D08E3EE0-C939-47E8-9645-6FC6D7C50AD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{E927A37F-CD00-4BEF-8A20-7A9548652EBC}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\test.yml = .github\workflows\test.yml
+		.github\workflows\publish.yml = .github\workflows\publish.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{061B4276-AB6F-47E0-A6B7-612B632A252F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{061B4276-AB6F-47E0-A6B7-612B632A252F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{061B4276-AB6F-47E0-A6B7-612B632A252F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{061B4276-AB6F-47E0-A6B7-612B632A252F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BB417AC-C3D4-43DC-92E9-8627D088DE39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BB417AC-C3D4-43DC-92E9-8627D088DE39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BB417AC-C3D4-43DC-92E9-8627D088DE39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BB417AC-C3D4-43DC-92E9-8627D088DE39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8B9E3463-9CB1-436A-B280-4CFD040F6370} = {09A02E46-110B-4493-8F28-2674391FFE0D}
+		{04DA3338-A86F-4E71-B9DE-71576D5E7280} = {09A02E46-110B-4493-8F28-2674391FFE0D}
+		{D08E3EE0-C939-47E8-9645-6FC6D7C50AD8} = {09A02E46-110B-4493-8F28-2674391FFE0D}
+		{E927A37F-CD00-4BEF-8A20-7A9548652EBC} = {D08E3EE0-C939-47E8-9645-6FC6D7C50AD8}
+	EndGlobalSection
+EndGlobal

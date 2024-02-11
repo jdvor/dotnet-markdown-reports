@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Roslynator>
+  <CodeAnalysis>
+    <Summary>
+      <Diagnostic Id="CS8019" Title="Unnecessary using directive" Count="1">
+        <HelpLink>https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&amp;k=k(CS8019)</HelpLink>
+      </Diagnostic>
+      <Diagnostic Id="SA1507" Title="Code should not contain multiple blank lines in a row" Count="2">
+        <Description>The C# code contains multiple blank lines in a row.</Description>
+        <HelpLink>https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA1507.md</HelpLink>
+      </Diagnostic>
+    </Summary>
+    <Projects>
+      <Project Name="Terraverse.TestProject.Core" FilePath="/home/jan/dev/terra/test-project/src/Terraverse.TestProject.Core/Terraverse.TestProject.Core.csproj">
+        <Diagnostics>
+          <Diagnostic Id="CS8019">
+            <Severity>Hidden</Severity>
+            <Message>Unnecessary using directive</Message>
+            <FilePath>/home/jan/dev/terra/test-project/src/Terraverse.TestProject.Core/LoggerExtensions.cs</FilePath>
+            <Location Line="4" Character="1" />
+          </Diagnostic>
+          <Diagnostic Id="SA1507">
+            <Severity>Warning</Severity>
+            <Message>Code should not contain multiple blank lines in a row</Message>
+            <FilePath>/home/jan/dev/terra/test-project/src/Terraverse.TestProject.Core/LoggerExtensions.cs</FilePath>
+            <Location Line="16" Character="1" />
+          </Diagnostic>
+          <Diagnostic Id="SA1507">
+            <Severity>Warning</Severity>
+            <Message>Code should not contain multiple blank lines in a row</Message>
+            <FilePath>/home/jan/dev/terra/test-project/src/Terraverse.TestProject.Core/LoggerExtensions.cs</FilePath>
+            <Location Line="29" Character="1" />
+          </Diagnostic>
+        </Diagnostics>
+      </Project>
+    </Projects>
+  </CodeAnalysis>
+</Roslynator>

@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="8718b690-c136-49bf-b9d5-e51bc78d3a70" name="@jdnb 2024-01-22 17:27:36" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2024-01-22T17:27:36.9131568+01:00" queuing="2024-01-22T17:27:36.9131569+01:00" start="2024-01-22T17:27:35.9488437+01:00" finish="2024-01-22T17:27:37.1008484+01:00" />
+  <TestSettings name="default" id="ead07b17-b3ee-4756-b5d9-030da1f66231">
+    <Deployment runDeploymentRoot="_jdnb_2024-01-22_17_27_36" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="55529be8-f511-4288-ba09-47eb21850ffd" testId="13c3d81c-c8b6-c827-0e68-1d1b91f52c2f" testName="Hypo(a: 2, b: -3, almostExpected: 13)" computerName="jdnb" duration="00:00:00.0000050" startTime="2024-01-22T17:27:36.8813819+01:00" endTime="2024-01-22T17:27:36.8813819+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="55529be8-f511-4288-ba09-47eb21850ffd" />
+    <UnitTestResult executionId="bfb4c42a-fa45-4153-bd1b-3d80a7a3a439" testId="02c057c6-cf5e-f2df-a00f-83bc95d0806c" testName="Adding(a: 0, b: 0, expected: 0)" computerName="jdnb" duration="00:00:00.0000059" startTime="2024-01-22T17:27:36.8566221+01:00" endTime="2024-01-22T17:27:36.8566221+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bfb4c42a-fa45-4153-bd1b-3d80a7a3a439" />
+    <UnitTestResult executionId="0ddf2d2f-d88f-4069-959a-e1e93628a2b3" testId="1f14099b-a35b-4385-94f9-b5bc7627d86d" testName="FailingHypo(a: 2, b: -3, almostExpected: 14)" computerName="jdnb" duration="00:00:00.0088567" startTime="2024-01-22T17:27:36.8456395+01:00" endTime="2024-01-22T17:27:36.8456589+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0ddf2d2f-d88f-4069-959a-e1e93628a2b3">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: 3.7416573867739413
+Actual:   3.6055512754639891</Message>
+          <StackTrace>   at Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests.FailingHypo(Int32 a, Int32 b, Int32 almostExpected) in /home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/EvenMoreUselessMathTests.cs:line 33
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b652ac07-dfee-4459-bc5b-43dc8dc2e973" testId="0a95e393-5569-e8be-bcd4-6891c9853142" testName="WillFail" computerName="jdnb" duration="00:00:00.0001428" startTime="2024-01-22T17:27:36.8832312+01:00" endTime="2024-01-22T17:27:36.8832313+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b652ac07-dfee-4459-bc5b-43dc8dc2e973">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : this is expected</Message>
+          <StackTrace>   at Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests.WillFail() in /home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/EvenMoreUselessMathTests.cs:line 39
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="732b489d-9c7f-4939-a5ff-51b957b1612d" testId="7e901ac3-3df3-f8ec-35bb-2db8b935810d" testName="FailingHypo(a: 0, b: 0, almostExpected: 1)" computerName="jdnb" duration="00:00:00.0001317" startTime="2024-01-22T17:27:36.8544492+01:00" endTime="2024-01-22T17:27:36.8544493+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="732b489d-9c7f-4939-a5ff-51b957b1612d">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: 1
+Actual:   0</Message>
+          <StackTrace>   at Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests.FailingHypo(Int32 a, Int32 b, Int32 almostExpected) in /home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/EvenMoreUselessMathTests.cs:line 33
+   at InvokeStub_EvenMoreUselessMathTests.FailingHypo(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="21d6ed20-6fda-458d-9e12-b2d512b54c25" testId="745804b9-df09-5620-1010-7bc6081ade7c" testName="Adding(a: 1, b: 1, expected: 2)" computerName="jdnb" duration="00:00:00.0002164" startTime="2024-01-22T17:27:36.8563403+01:00" endTime="2024-01-22T17:27:36.8563404+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="21d6ed20-6fda-458d-9e12-b2d512b54c25" />
+    <UnitTestResult executionId="a370d1df-fc5f-425e-9e1d-e6b11d2f574e" testId="cd63ff52-37e1-7661-6319-d716f50b84fa" testName="Skippy" computerName="jdnb" duration="00:00:00.0010000" startTime="2024-01-22T17:27:36.8826282+01:00" endTime="2024-01-22T17:27:36.8826283+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a370d1df-fc5f-425e-9e1d-e6b11d2f574e">
+      <Output>
+        <ErrorInfo>
+          <Message>I want to test skipped entries in TRX report</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b8121683-1523-4550-ac9f-07b18595383f" testId="b8f2ce33-43d6-e9d5-645f-88fc7c3e6293" testName="Hypo(a: 2, b: 3, almostExpected: 13)" computerName="jdnb" duration="00:00:00.0001907" startTime="2024-01-22T17:27:36.8571612+01:00" endTime="2024-01-22T17:27:36.8571613+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b8121683-1523-4550-ac9f-07b18595383f" />
+    <UnitTestResult executionId="62beb75e-fc65-47b8-804b-a23d2ed09f41" testId="fed49e02-e16c-207a-96f9-fe5b1e4ab6b7" testName="Hypo(a: 0, b: 0, almostExpected: 0)" computerName="jdnb" duration="00:00:00.0000820" startTime="2024-01-22T17:27:36.8568941+01:00" endTime="2024-01-22T17:27:36.8568942+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="62beb75e-fc65-47b8-804b-a23d2ed09f41" />
+    <UnitTestResult executionId="8d6d43cc-7240-4255-8aa1-054e01955550" testId="0ba6f47d-a7e1-70b4-4cb2-10540d90ac6a" testName="Adding(a: 2, b: -1, expected: 1)" computerName="jdnb" duration="00:00:00.0025764" startTime="2024-01-22T17:27:36.8559161+01:00" endTime="2024-01-22T17:27:36.8559162+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8d6d43cc-7240-4255-8aa1-054e01955550" />
+    <UnitTestResult executionId="78326ddd-2308-45d1-ab52-840d9ea0ffc4" testId="7262b304-3c85-27f7-8d97-5fdf13d51cb1" testName="FailingHypo(a: 1, b: 1, almostExpected: 3)" computerName="jdnb" duration="00:00:00.0000886" startTime="2024-01-22T17:27:36.8552115+01:00" endTime="2024-01-22T17:27:36.8552116+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="78326ddd-2308-45d1-ab52-840d9ea0ffc4">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: 1.7320508075688772
+Actual:   1.4142135623730951</Message>
+          <StackTrace>   at Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests.FailingHypo(Int32 a, Int32 b, Int32 almostExpected) in /home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/EvenMoreUselessMathTests.cs:line 33
+   at InvokeStub_EvenMoreUselessMathTests.FailingHypo(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7298f3bf-d6bc-48a6-b64e-7a99217fa82a" testId="59a9c64b-1cd7-88f3-408b-1beb61be2c8a" testName="Hypo(a: 1, b: 1, almostExpected: 2)" computerName="jdnb" duration="00:00:00.0000018" startTime="2024-01-22T17:27:36.8817046+01:00" endTime="2024-01-22T17:27:36.8817046+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7298f3bf-d6bc-48a6-b64e-7a99217fa82a" />
+    <UnitTestResult executionId="9505aab7-fc53-461c-8794-068e1131a650" testId="e10cc2c9-6608-3056-91a2-2a6416addb55" testName="FailingHypo(a: 2, b: 3, almostExpected: 14)" computerName="jdnb" duration="00:00:00.0003713" startTime="2024-01-22T17:27:36.8535438+01:00" endTime="2024-01-22T17:27:36.8535439+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9505aab7-fc53-461c-8794-068e1131a650">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: 3.7416573867739413
+Actual:   3.6055512754639891</Message>
+          <StackTrace>   at Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests.FailingHypo(Int32 a, Int32 b, Int32 almostExpected) in /home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/EvenMoreUselessMathTests.cs:line 33
+   at InvokeStub_EvenMoreUselessMathTests.FailingHypo(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="WillFail" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="0a95e393-5569-e8be-bcd4-6891c9853142">
+      <Execution id="b652ac07-dfee-4459-bc5b-43dc8dc2e973" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="WillFail" />
+    </UnitTest>
+    <UnitTest name="Hypo(a: 0, b: 0, almostExpected: 0)" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="fed49e02-e16c-207a-96f9-fe5b1e4ab6b7">
+      <Execution id="62beb75e-fc65-47b8-804b-a23d2ed09f41" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="Hypo" />
+    </UnitTest>
+    <UnitTest name="FailingHypo(a: 2, b: 3, almostExpected: 14)" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="e10cc2c9-6608-3056-91a2-2a6416addb55">
+      <Execution id="9505aab7-fc53-461c-8794-068e1131a650" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="FailingHypo" />
+    </UnitTest>
+    <UnitTest name="FailingHypo(a: 1, b: 1, almostExpected: 3)" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="7262b304-3c85-27f7-8d97-5fdf13d51cb1">
+      <Execution id="78326ddd-2308-45d1-ab52-840d9ea0ffc4" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="FailingHypo" />
+    </UnitTest>
+    <UnitTest name="Hypo(a: 2, b: 3, almostExpected: 13)" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="b8f2ce33-43d6-e9d5-645f-88fc7c3e6293">
+      <Execution id="b8121683-1523-4550-ac9f-07b18595383f" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="Hypo" />
+    </UnitTest>
+    <UnitTest name="Adding(a: 0, b: 0, expected: 0)" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="02c057c6-cf5e-f2df-a00f-83bc95d0806c">
+      <Execution id="bfb4c42a-fa45-4153-bd1b-3d80a7a3a439" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="Adding" />
+    </UnitTest>
+    <UnitTest name="Hypo(a: 2, b: -3, almostExpected: 13)" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="13c3d81c-c8b6-c827-0e68-1d1b91f52c2f">
+      <Execution id="55529be8-f511-4288-ba09-47eb21850ffd" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="Hypo" />
+    </UnitTest>
+    <UnitTest name="Adding(a: 1, b: 1, expected: 2)" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="745804b9-df09-5620-1010-7bc6081ade7c">
+      <Execution id="21d6ed20-6fda-458d-9e12-b2d512b54c25" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="Adding" />
+    </UnitTest>
+    <UnitTest name="Skippy" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="cd63ff52-37e1-7661-6319-d716f50b84fa">
+      <Execution id="a370d1df-fc5f-425e-9e1d-e6b11d2f574e" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="Skippy" />
+    </UnitTest>
+    <UnitTest name="FailingHypo(a: 0, b: 0, almostExpected: 1)" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="7e901ac3-3df3-f8ec-35bb-2db8b935810d">
+      <Execution id="732b489d-9c7f-4939-a5ff-51b957b1612d" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="FailingHypo" />
+    </UnitTest>
+    <UnitTest name="Adding(a: 2, b: -1, expected: 1)" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="0ba6f47d-a7e1-70b4-4cb2-10540d90ac6a">
+      <Execution id="8d6d43cc-7240-4255-8aa1-054e01955550" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="Adding" />
+    </UnitTest>
+    <UnitTest name="Hypo(a: 1, b: 1, almostExpected: 2)" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="59a9c64b-1cd7-88f3-408b-1beb61be2c8a">
+      <Execution id="7298f3bf-d6bc-48a6-b64e-7a99217fa82a" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="Hypo" />
+    </UnitTest>
+    <UnitTest name="FailingHypo(a: 2, b: -3, almostExpected: 14)" storage="/home/jan/dev/terra/test-project/tests/terraverse.testproject.samplelib2.tests/bin/release/net8.0/terraverse.testproject.samplelib2.tests.dll" id="1f14099b-a35b-4385-94f9-b5bc7627d86d">
+      <Execution id="0ddf2d2f-d88f-4069-959a-e1e93628a2b3" />
+      <TestMethod codeBase="/home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/bin/Release/net8.0/Terraverse.TestProject.SampleLib2.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests" name="FailingHypo" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="13c3d81c-c8b6-c827-0e68-1d1b91f52c2f" executionId="55529be8-f511-4288-ba09-47eb21850ffd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="02c057c6-cf5e-f2df-a00f-83bc95d0806c" executionId="bfb4c42a-fa45-4153-bd1b-3d80a7a3a439" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1f14099b-a35b-4385-94f9-b5bc7627d86d" executionId="0ddf2d2f-d88f-4069-959a-e1e93628a2b3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0a95e393-5569-e8be-bcd4-6891c9853142" executionId="b652ac07-dfee-4459-bc5b-43dc8dc2e973" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7e901ac3-3df3-f8ec-35bb-2db8b935810d" executionId="732b489d-9c7f-4939-a5ff-51b957b1612d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="745804b9-df09-5620-1010-7bc6081ade7c" executionId="21d6ed20-6fda-458d-9e12-b2d512b54c25" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cd63ff52-37e1-7661-6319-d716f50b84fa" executionId="a370d1df-fc5f-425e-9e1d-e6b11d2f574e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b8f2ce33-43d6-e9d5-645f-88fc7c3e6293" executionId="b8121683-1523-4550-ac9f-07b18595383f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fed49e02-e16c-207a-96f9-fe5b1e4ab6b7" executionId="62beb75e-fc65-47b8-804b-a23d2ed09f41" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0ba6f47d-a7e1-70b4-4cb2-10540d90ac6a" executionId="8d6d43cc-7240-4255-8aa1-054e01955550" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7262b304-3c85-27f7-8d97-5fdf13d51cb1" executionId="78326ddd-2308-45d1-ab52-840d9ea0ffc4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="59a9c64b-1cd7-88f3-408b-1beb61be2c8a" executionId="7298f3bf-d6bc-48a6-b64e-7a99217fa82a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e10cc2c9-6608-3056-91a2-2a6416addb55" executionId="9505aab7-fc53-461c-8794-068e1131a650" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="13" executed="12" passed="7" failed="5" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.0)
+[xUnit.net 00:00:00.06]   Discovering: Terraverse.TestProject.SampleLib2.Tests (method display = Method, method display options = All)
+[xUnit.net 00:00:00.10]   Discovered:  Terraverse.TestProject.SampleLib2.Tests (found 13 test cases)
+[xUnit.net 00:00:00.10]   Starting:    Terraverse.TestProject.SampleLib2.Tests (parallel test collections = on, max threads = 16)
+[xUnit.net 00:00:00.16]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:00.16]       Expected: 3.7416573867739413
+[xUnit.net 00:00:00.16]       Actual:   3.6055512754639891
+[xUnit.net 00:00:00.16]       Stack Trace:
+[xUnit.net 00:00:00.17]         /home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/EvenMoreUselessMathTests.cs(33,0): at Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests.FailingHypo(Int32 a, Int32 b, Int32 almostExpected)
+[xUnit.net 00:00:00.17]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:00.17]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:00.17]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:00.17]       Expected: 3.7416573867739413
+[xUnit.net 00:00:00.17]       Actual:   3.6055512754639891
+[xUnit.net 00:00:00.17]       Stack Trace:
+[xUnit.net 00:00:00.17]         /home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/EvenMoreUselessMathTests.cs(33,0): at Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests.FailingHypo(Int32 a, Int32 b, Int32 almostExpected)
+[xUnit.net 00:00:00.17]            at InvokeStub_EvenMoreUselessMathTests.FailingHypo(Object, Span`1)
+[xUnit.net 00:00:00.17]            at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:00.17]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:00.17]       Expected: 1
+[xUnit.net 00:00:00.17]       Actual:   0
+[xUnit.net 00:00:00.17]       Stack Trace:
+[xUnit.net 00:00:00.17]         /home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/EvenMoreUselessMathTests.cs(33,0): at Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests.FailingHypo(Int32 a, Int32 b, Int32 almostExpected)
+[xUnit.net 00:00:00.17]            at InvokeStub_EvenMoreUselessMathTests.FailingHypo(Object, Span`1)
+[xUnit.net 00:00:00.17]            at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:00.18]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:00.18]       Expected: 1.7320508075688772
+[xUnit.net 00:00:00.18]       Actual:   1.4142135623730951
+[xUnit.net 00:00:00.18]       Stack Trace:
+[xUnit.net 00:00:00.18]         /home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/EvenMoreUselessMathTests.cs(33,0): at Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests.FailingHypo(Int32 a, Int32 b, Int32 almostExpected)
+[xUnit.net 00:00:00.18]            at InvokeStub_EvenMoreUselessMathTests.FailingHypo(Object, Span`1)
+[xUnit.net 00:00:00.18]            at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:00.20]       I want to test skipped entries in TRX report
+[xUnit.net 00:00:00.20]       System.ArgumentException : this is expected
+[xUnit.net 00:00:00.20]       Stack Trace:
+[xUnit.net 00:00:00.20]         /home/jan/dev/terra/test-project/tests/Terraverse.TestProject.SampleLib2.Tests/EvenMoreUselessMathTests.cs(39,0): at Terraverse.TestProject.SampleLib2.Tests.EvenMoreUselessMathTests.WillFail()
+[xUnit.net 00:00:00.20]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:00.20]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:00.21]   Finished:    Terraverse.TestProject.SampleLib2.Tests
+Test 'Skippy' was skipped in the test run.
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="jdnb" outcome="Error" timestamp="2024-01-22T17:27:36.8438986+01:00">
+        <Text>[xUnit.net 00:00:00.16]     FailingHypo(a: 2, b: -3, almostExpected: 14) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="jdnb" outcome="Error" timestamp="2024-01-22T17:27:36.8534809+01:00">
+        <Text>[xUnit.net 00:00:00.17]     FailingHypo(a: 2, b: 3, almostExpected: 14) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="jdnb" outcome="Error" timestamp="2024-01-22T17:27:36.8543296+01:00">
+        <Text>[xUnit.net 00:00:00.17]     FailingHypo(a: 0, b: 0, almostExpected: 1) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="jdnb" outcome="Error" timestamp="2024-01-22T17:27:36.8551083+01:00">
+        <Text>[xUnit.net 00:00:00.18]     FailingHypo(a: 1, b: 1, almostExpected: 3) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="jdnb" outcome="Warning" timestamp="2024-01-22T17:27:36.9199071+01:00">
+        <Text>[xUnit.net 00:00:00.20]     Skippy [SKIP]</Text>
+      </RunInfo>
+      <RunInfo computerName="jdnb" outcome="Error" timestamp="2024-01-22T17:27:36.9200565+01:00">
+        <Text>[xUnit.net 00:00:00.20]     WillFail [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+    <CollectorDataEntries>
+      <Collector agentName="jdnb" uri="datacollector://microsoft/CoverletCodeCoverage/1.0" collectorDisplayName="XPlat code coverage">
+        <UriAttachments>
+          <UriAttachment>
+            <A href="jdnb/coverage.cobertura[1].xml"></A>
+          </UriAttachment>
+        </UriAttachments>
+      </Collector>
+    </CollectorDataEntries>
+  </ResultSummary>
+</TestRun>
