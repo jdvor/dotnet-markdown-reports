@@ -58,6 +58,11 @@ jobs:
           search_commit_body: true
           version_format: "${major}.${minor}.${patch}"
 
+      - name: Test2
+        if: inputs.pack == 'true' || inputs.pack == '1' || inputs.app == 'true' || inputs.app == '1'
+        run: |
+          echo AAAA
+
 #      - name: Tag source with semantic version
 #        if: inputs.pack == 'true' || inputs.pack == '1' || inputs.app == 'true' || inputs.app == '1'
 #        run: |
