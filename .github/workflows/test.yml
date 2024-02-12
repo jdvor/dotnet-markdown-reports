@@ -16,8 +16,6 @@ on:
 jobs:
   test:
     name: 'Test'
-
-    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners
     runs-on: ubuntu-22.04
 
     steps:

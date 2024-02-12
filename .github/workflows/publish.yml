@@ -6,21 +6,10 @@ permissions:
 
 on:
   workflow_dispatch:
-    inputs:
-      pack:
-        description: create dotnet tool (NuGet package) and push it to nuget.org
-        required: false
-        type: boolean
-      app:
-        description: publish standalone self-contained application and create GitHub release
-        required: false
-        type: boolean
 
 jobs:
   build:
     name: 'Build & Publish'
-
-    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners
     runs-on: ubuntu-22.04
 
     steps:
@@ -43,10 +32,7 @@ jobs:
           restore-keys: packages-${{ runner.os }}-
 
       - name: Execute tests
-        run: dotnet test -c Release --results-directory ./artifacts/trx --logger trx -v minimal --nologo
-
-      - name: Testing exit code
-        run: exit 1
+        run: dotnet test -c Release -v minimal --nologo
 
       - name: Determine semantic version
         id: semver
@@ -58,21 +44,9 @@ jobs:
           search_commit_body: true
           version_format: "${major}.${minor}.${patch}"
 
-      - name: Test2
-        if: inputs.pack == 'true' || inputs.pack == '1' || inputs.app == 'true' || inputs.app == '1'
-        run: |
-          echo AAAA
+      - name: Create version tag
+        id: version
+        run: ./version.sh -v ${{ steps.semver.outputs.version }} -i ${{ steps.semver.outputs.increment }} --create-tag >> $GITHUB_OUTPUT
 
-#      - name: Tag source with semantic version
-#        if: inputs.pack == 'true' || inputs.pack == '1' || inputs.app == 'true' || inputs.app == '1'
-#        run: |
-#          git tag "${{ steps.semver.outputs.version }}"
-#          git push origin "${{ steps.semver.outputs.version }}"
-#
-#      - name: Pack dotnet tool & push to nuget.org
-#        if: inputs.pack == 'true' || inputs.pack == '1'
-#        run: ./run.sh -t pack -v "${{ steps.semver.outputs.version }}" -p "${{ secrets.MDREPORT_API_KEY }}"
-#
-#      - name: Publish standalone application
-#        if: inputs.app == 'true' || inputs.app == '1'
-#        run: ./run.sh -t publish -v "${{ steps.semver.outputs.version }}" -z
+      - name: Pack dotnet tool & push to nuget.org
+        run: ./pack.sh -v "${{ steps.version.outputs.version_prefix }}" -s "${{ steps.version.outputs.version_suffix }}" -p "${{ secrets.MDREPORT_API_KEY }}"

@@ -12,7 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_solution", "_solution", "{
 		nuget.config = nuget.config
 		README.md = README.md
 		shared.props = shared.props
-		run.sh = run.sh
+		pack.sh = pack.sh
+		publish.sh = publish.sh
+		version.sh = version.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8B9E3463-9CB1-436A-B280-4CFD040F6370}"
