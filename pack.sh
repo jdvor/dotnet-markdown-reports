@@ -31,5 +31,5 @@ fi
 ls -Alh "$pack_dir"
 
 if [ -n "$push" ]; then
-    dotnet nuget push "$pack_dir/*.nupkg" --api-key "$push" --skip-duplicate
+    dotnet nuget push "$pack_dir/*.nupkg" --source "https://api.nuget.org/v3/index.json" --api-key "$push" --skip-duplicate
 fi
