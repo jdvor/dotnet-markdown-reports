@@ -126,11 +126,11 @@ internal class TrxBasicMarkdown : IAction
             var mt2 = new MarkdownTable(["namespace", "status", "failed", "passed", "skipped"], testsByAssembly.Count);
             foreach (var (ns, testsAsm) in testsByAssembly)
             {
-                passed = testsAsm.Count(x => x.Result == Passed);
-                failed = testsAsm.Count(x => x.Result == Failed);
-                skipped = testsAsm.Count(x => x.Result == Skipped);
-                status = failed > 0 || passed < 1 ? "Fail" : "Ok";
-                mt2.AddRow(ns, status, failed.ToString(), passed.ToString(), skipped.ToString());
+                var passedAsm = testsAsm.Count(x => x.Result == Passed);
+                var failedAsm = testsAsm.Count(x => x.Result == Failed);
+                var skippedAsm = testsAsm.Count(x => x.Result == Skipped);
+                var statusAsm = failed > 0 || passed < 1 ? "Fail" : "Ok";
+                mt2.AddRow(ns, statusAsm, failedAsm.ToString(), passedAsm.ToString(), skippedAsm.ToString());
             }
 
             b.Table(mt2);
