@@ -41,7 +41,6 @@ dotnet_sort_system_directives_first = false
 
 # Documentation
 dotnet_analyzer_diagnostic.category-Documentation.severity = none
-dotnet_analyzer_diagnostic.category-StyleCop.CSharp.DocumentationRules.severity = none
 
 # Code
 dotnet_diagnostic.CA1010.severity = none       # CollectionsShouldImplementGenericInterface
@@ -60,27 +59,3 @@ dotnet_diagnostic.CA2225.severity = none       # OperatorOverloadsHaveNamedAlter
 # Style - Documentation
 dotnet_diagnostic.CS1573.severity = none       # Missing XML comment for publicly visible type or member
 dotnet_diagnostic.CS1591.severity = none       # no matching param tag in the XML comment
-
-# Style
-dotnet_diagnostic.SA1101.severity = none       # PrefixLocalCallsWithThis
-dotnet_diagnostic.SA1124.severity = none       # DoNotUseRegions
-dotnet_diagnostic.SA1203.severity = none       # ConstantsMustAppearBeforeFields
-dotnet_diagnostic.SA1214.severity = none       # ReadonlyElementsMustAppearBeforeNonReadonlyElements
-dotnet_diagnostic.SA1316.severity = none       # TupleElementNamesShouldUseCorrectCasing
-
-# Style - Ordering Rules
-dotnet_diagnostic.SA1200.severity = none       # UsingDirectivesMustBePlacedWithinNamespace
-dotnet_diagnostic.SA1201.severity = none       # ElementsMustAppearInTheCorrectOrder
-dotnet_diagnostic.SA1202.severity = none       # ElementsMustBeOrderedByAccess
-dotnet_diagnostic.SA1203.severity = warning    # ConstantsMustAppearBeforeFields
-dotnet_diagnostic.SA1204.severity = none       # StaticElementsMustAppearBeforeInstanceElements
-dotnet_diagnostic.SA1205.severity = none       # PartialElementsMustDeclareAccess
-dotnet_diagnostic.SA1206.severity = warning    # DeclarationKeywordsMustFollowOrder
-dotnet_diagnostic.SA1207.severity = none       # ProtectedMustComeBeforeInternal
-dotnet_diagnostic.SA1208.severity = none       # SystemUsingDirectivesMustBePlacedBeforeOtherUsingDirectives
-dotnet_diagnostic.SA1209.severity = warning    # UsingAliasDirectivesMustBePlacedAfterOtherUsingDirectives
-dotnet_diagnostic.SA1210.severity = warning    # UsingDirectivesMustBeOrderedAlphabeticallyByNamespace
-dotnet_diagnostic.SA1211.severity = warning    # UsingAliasDirectivesMustBeOrderedAlphabeticallyByAliasName
-dotnet_diagnostic.SA1212.severity = none       # PropertyAccessorsMustFollowOrder
-dotnet_diagnostic.SA1213.severity = none       # EventAccessorsMustFollowOrder
-dotnet_diagnostic.SA1214.severity = warning    # ReadonlyElementsMustAppearBeforeNonReadonlyElements
