@@ -1,6 +1,7 @@
 namespace DotnetMarkdownReports.App.Trx;
 
-public record TestExec(
+public sealed record TestExec(
+    string Version,
     string FullName,
     string ShortName,
     string ClassName,

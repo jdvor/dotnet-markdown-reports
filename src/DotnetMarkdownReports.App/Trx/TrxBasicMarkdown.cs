@@ -3,12 +3,15 @@ namespace DotnetMarkdownReports.App.Trx;
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
+using System.Text.RegularExpressions;
 using static DotnetMarkdownReports.App.Constants;
 using static TestExecResult;
 
 internal class TrxBasicMarkdown : IAction
 {
     private const int TerseFailedLimit = 100;
+    private const string FallBackVersion = "";
+    private static readonly Regex VersionRegex = new(@"\(64-bit \.NET (?<Version>\d+\.\d+\.\d+)\)");
     private readonly CommonParameters common;
     private readonly Action<string>? testOutput;
 
@@ -31,7 +34,7 @@ internal class TrxBasicMarkdown : IAction
             return 0;
         }
 
-        var tmp = new Dictionary<string, TestExec>();
+        var tmp = new Dictionary<string, Dictionary<string, TestExec>>();
 
         foreach (var fileInfo in files)
         {
@@ -39,20 +42,20 @@ internal class TrxBasicMarkdown : IAction
             AppendTestRun(tmp, tr);
         }
 
-        if (tmp.Count == 0)
+        if (tmp.Count == 0 || tmp.Values.Sum(x => x.Values.Count) == 0)
         {
             return 0;
         }
 
         var writeHeader = !string.IsNullOrEmpty(common.OutputFilePath);
         var sb = new StringBuilder();
-        WriteMarkdown(sb, tmp.Values, writeHeader);
+        WriteMarkdown(sb, tmp, writeHeader);
         WriteOutput(sb, common.OutputFilePath);
 
         return 0;
     }
 
-    private static void AppendTestRun(Dictionary<string, TestExec> acc, TestRun tr)
+    private static void AppendTestRun(Dictionary<string, Dictionary<string, TestExec>> tmp, TestRun tr)
     {
         static string TheoryArgs(string name)
         {
@@ -60,6 +63,14 @@ internal class TrxBasicMarkdown : IAction
             return idx > 0
                 ? name.Substring(idx + 1, name.Length - idx - 2)
                 : string.Empty;
+        }
+
+        var version = GetVersion(tr);
+
+        if (!tmp.TryGetValue(version, out var acc))
+        {
+            acc = [];
+            tmp[version] = acc;
         }
 
         foreach (var r in tr.Results)
@@ -84,13 +95,27 @@ internal class TrxBasicMarkdown : IAction
             var outcome = r.Outcome.ToLowerInvariant();
             var testExec = outcome switch
             {
-                "passed" => new TestExec(full, @short, @class, ns, targs, Passed, r.Duration, r.EndTime),
-                "failed" => new TestExec(full, @short, @class, ns, targs, Failed, r.Duration, r.EndTime, err, stack),
-                "notexecuted" => new TestExec(full, @short, @class, ns, targs, Skipped, r.Duration, r.EndTime, err),
-                _ => new TestExec(full, @short, @class, ns, targs, Other, r.Duration, r.EndTime, err, stack),
+                "passed" => new TestExec(version, full, @short, @class, ns, targs, Passed, r.Duration, r.EndTime),
+                "failed" => new TestExec(version, full, @short, @class, ns, targs, Failed, r.Duration, r.EndTime, err, stack),
+                "notexecuted" => new TestExec(version, full, @short, @class, ns, targs, Skipped, r.Duration, r.EndTime, err),
+                _ => new TestExec(version, full, @short, @class, ns, targs, Other, r.Duration, r.EndTime, err, stack),
             };
             acc[full] = testExec;
         }
+    }
+
+    private static string GetVersion(TestRun tr)
+    {
+        var txt = tr.ResultSummary.Output?.StdOut;
+        if (string.IsNullOrEmpty(txt))
+        {
+            return FallBackVersion;
+        }
+
+        var match = VersionRegex.Match(txt);
+        return match.Success
+            ? match.Groups["Version"].Value
+            : FallBackVersion;
     }
 
     private static (string ns, string className) GetNamespaceAndClass(string fullClassName)
@@ -101,13 +126,27 @@ internal class TrxBasicMarkdown : IAction
             : (fullClassName[..lastDotIndex], fullClassName[(lastDotIndex + 1)..]);
     }
 
-    private static void WriteMarkdown(StringBuilder sb, ICollection<TestExec> tests, bool writeHeader)
+    private static void WriteMarkdown(
+        StringBuilder sb,
+        Dictionary<string, Dictionary<string, TestExec>> tmp,
+        bool writeHeader)
     {
-        if (writeHeader)
+        var manyVersions = tmp.Count > 1;
+        foreach (var (version, tests) in tmp.OrderByDescending(x => x.Key))
         {
-            sb.H1("Tests");
-        }
+            if (writeHeader)
+            {
+                var h1 = manyVersions ? $"Tests ({version})" : "Tests";
+                sb.H1(h1);
+            }
 
+            var suffix = manyVersions ? $" ({version})" : string.Empty;
+            WriteMarkdown(sb, tests.Values, suffix);
+        }
+    }
+
+    private static void WriteMarkdown(StringBuilder sb, ICollection<TestExec> tests, string suffix)
+    {
         var passed = tests.Count(x => x.Result == Passed);
         var failed = tests.Count(x => x.Result == Failed);
         var skipped = tests.Count(x => x.Result == Skipped);
@@ -115,12 +154,12 @@ internal class TrxBasicMarkdown : IAction
         var testsByAssembly = tests.GroupBy(x => x.Namespace)
             .ToImmutableSortedDictionary(x => x.Key, x => x.ToImmutableArray());
 
-        sb.H2("Tests Summary");
+        sb.H2($"Tests Summary{suffix}");
         var mt1 = new MarkdownTable(["status", "failed", "passed", "skipped"], 1);
         mt1.AddRow(status, failed.ToString(), passed.ToString(), skipped.ToString());
         sb.Table(mt1);
 
-        sb.H2("Test Results By Namespace");
+        sb.H2($"Test Results By Namespace{suffix}");
         sb.Details(false, "by namespace", b =>
         {
             var mt2 = new MarkdownTable(["namespace", "status", "failed", "passed", "skipped"], testsByAssembly.Count);
@@ -138,7 +177,7 @@ internal class TrxBasicMarkdown : IAction
 
         if (failed > 0)
         {
-            sb.H2("Failed Tests");
+            sb.H2($"Failed Tests{suffix}");
             var failedTests = tests.Where(x => x.Result == Failed);
             if (failed > TerseFailedLimit)
             {

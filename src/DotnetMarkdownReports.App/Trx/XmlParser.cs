@@ -173,6 +173,13 @@ public class ResultSummary
     public string Outcome { get; set; } = string.Empty;
 
     public Counters Counters { get; set; } = new();
+
+    public ResultSummaryOutput? Output { get; set; }
+}
+
+public class ResultSummaryOutput
+{
+    public string StdOut { get; set; } = string.Empty;
 }
 
 public class Counters
