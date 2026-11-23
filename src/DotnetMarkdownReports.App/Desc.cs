@@ -6,10 +6,13 @@ internal static class Desc
     internal const string OutputFilePathOpt = "";
     internal const string QuietOpt = "";
     internal const string OnlySummaryOpt = "";
+    internal const string LevelOpt = "";
 
     internal const string TrxCmd = "";
 
     internal const string CoberturaCmd = "";
 
     internal const string RoslynatorCmd = "";
+
+    internal const string SarifCmd = "";
 }
