@@ -3,6 +3,7 @@ name: 'Publish'
 permissions:
   actions: read
   contents: write
+  id-token: write  # OIDC token for nuget.org trusted publishing
 
 on:
   workflow_dispatch:
@@ -48,5 +49,11 @@ jobs:
         id: version
         run: ./version.sh -v ${{ steps.semver.outputs.version }} -i ${{ steps.semver.outputs.increment }} --create-tag >> $GITHUB_OUTPUT
 
+      - name: NuGet login (OIDC -> temporary API key)
+        id: nuget_login
+        uses: NuGet/login@v1
+        with:
+          user: jdvor  # nuget.org profile name
+
       - name: Pack dotnet tool & push to nuget.org
-        run: ./pack.sh -v "${{ steps.version.outputs.version_prefix }}" -s "${{ steps.version.outputs.version_suffix }}" -p "${{ secrets.MDREPORT_API_KEY }}"
+        run: ./pack.sh -v "${{ steps.version.outputs.version_prefix }}" -s "${{ steps.version.outputs.version_suffix }}" -p "${{ steps.nuget_login.outputs.NUGET_API_KEY }}"
