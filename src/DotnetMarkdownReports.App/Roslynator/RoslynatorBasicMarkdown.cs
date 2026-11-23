@@ -39,7 +39,7 @@ internal class RoslynatorBasicMarkdown : IAction
         return 0;
     }
 
-    private static void WriteMarkdown(StringBuilder sb, CodeAnalysis analysis, bool writeHeader)
+    internal static void WriteMarkdown(StringBuilder sb, CodeAnalysis analysis, bool writeHeader)
     {
         if (writeHeader)
         {
@@ -61,7 +61,7 @@ internal class RoslynatorBasicMarkdown : IAction
                 ? diagnostic.Id
                 : $"[{diagnostic.Id}]({diagnostic.HelpLink})";
             var count = diagnostic.Count.ToString(CultureInfo.InvariantCulture);
-            mt1.AddRow(id, count, diagnostic.Title, diagnostic.Description.EscapeMarkdownTableCell());
+            mt1.AddRow(id, count, diagnostic.Title.EscapeMarkdownTableCell(), diagnostic.Description.EscapeMarkdownTableCell());
         }
 
         sb.Table(mt1);

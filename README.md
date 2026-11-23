@@ -10,6 +10,7 @@ Implemented:
 * TRX test reports
 * Cobertura code coverage reports
 * Roslynator code analysis report
+* SARIF 2.1 code analysis logs (Roslyn compiler and analyzers)
 
 
 ## Installation
@@ -74,3 +75,33 @@ mdreport roslynator "some/dir/sub/roslynator.xml" -o "{output-file-path}"
 > or test run (usually one per project in the solution), the roslynator produces single XML file for a build. 
 > So if multiple roslynator.xml files are found when using directory or globbing pattern sources, they are not merged, 
 > but the most recent one is picked as a source. 
+
+### SARIF code analysis logs
+
+Renders SARIF 2.1 logs produced by the C# compiler and Roslyn analyzers (`ErrorLog` MSBuild property) into the same
+markdown as the roslynator report. Suppressed results (`#pragma`, `[SuppressMessage]`, ...) are skipped.
+
+*SARIF logs written directly to stdout:*
+```shell
+# a particular sarif log
+mdreport sarif "some/dir/sub/MyProject.sarif"
+
+# every sarif log from a directory, recursively (project name is taken from the file name;
+# logs with the same name, e.g. one per target framework, are merged and duplicate results reported once)
+mdreport sarif "some/dir/sub"
+
+# only results with level warning or error (none | note | warning | error, default: note)
+mdreport sarif "some/dir/sub" --level warning
+```
+
+*SARIF logs written into a file:*
+```shell
+mdreport sarif "{path-to-a-file-or-directory-or-glob-pattern}" -o "{output-file-path}"
+```
+
+*Producing SARIF logs during build (one file per project, the target directory must exist):*
+```xml
+<PropertyGroup>
+  <ErrorLog>{sarif-dir}/$(MSBuildProjectName).sarif,version=2.1</ErrorLog>
+</PropertyGroup>
+```

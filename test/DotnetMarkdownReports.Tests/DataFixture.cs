@@ -14,6 +14,10 @@ public sealed class DataFixture : IDisposable
 
     public DirectoryInfo EmptyCoberturaDataDir { get; }
 
+    public DirectoryInfo SarifDataDir { get; }
+
+    public DirectoryInfo EmptySarifDataDir { get; }
+
     private readonly string tempDir;
     private bool disposed;
 
@@ -23,11 +27,13 @@ public sealed class DataFixture : IDisposable
         TrxDataDir = GetDataDirOrThrow(testDir, "trx");
         RoslynatorDataDir = GetDataDirOrThrow(testDir, "roslynator");
         CoberturaDataDir = GetDataDirOrThrow(testDir, "cobertura");
+        SarifDataDir = GetDataDirOrThrow(testDir, "sarif");
 
         tempDir = GetTempDir();
         EmptyTrxDataDir = CreateEmptyDir(tempDir, "trx");
         EmptyRoslynatorDataDir = CreateEmptyDir(tempDir, "roslynator");
         EmptyCoberturaDataDir = CreateEmptyDir(tempDir, "cobertura");
+        EmptySarifDataDir = CreateEmptyDir(tempDir, "sarif");
     }
 
     public void Dispose()

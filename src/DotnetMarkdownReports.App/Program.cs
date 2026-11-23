@@ -2,6 +2,7 @@
 using DotnetMarkdownReports.App;
 using DotnetMarkdownReports.App.Cobertura;
 using DotnetMarkdownReports.App.Roslynator;
+using DotnetMarkdownReports.App.Sarif;
 using DotnetMarkdownReports.App.Trx;
 
 var app = CoconaLiteApp.Create(args, options =>
@@ -33,5 +34,14 @@ app.AddCommand(
         return cmd.Execute();
     })
     .WithDescription(Desc.RoslynatorCmd);
+
+app.AddCommand(
+        "sarif",
+        (CommonParameters common, [Option('l', Description = Desc.LevelOpt)] string level = "note") =>
+    {
+        var cmd = new SarifBasicMarkdown(common, level);
+        return cmd.Execute();
+    })
+    .WithDescription(Desc.SarifCmd);
 
 app.Run();
