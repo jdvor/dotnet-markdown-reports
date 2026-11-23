@@ -53,7 +53,7 @@ jobs:
         id: nuget_login
         uses: NuGet/login@v1
         with:
-          user: jdvor  # nuget.org profile name
+          user: jandvorak  # nuget.org profile name of the policy creator
 
       - name: Pack dotnet tool & push to nuget.org
         run: ./pack.sh -v "${{ steps.version.outputs.version_prefix }}" -s "${{ steps.version.outputs.version_suffix }}" -p "${{ steps.nuget_login.outputs.NUGET_API_KEY }}"
